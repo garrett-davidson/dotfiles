@@ -1,0 +1,93 @@
+# Ask for the administrator password upfront
+sudo -v
+
+
+# General
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+
+# Language
+# Setup system lanuage for English and Arabic
+defaults write NSGlobalDomain AppleLanguages -array "en-US" "ar"
+
+
+# Screensaver
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+
+# Finder
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+
+# Dock/Menu bar
+# Dark theme
+defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Dark"
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Group windows by application in Mission Control
+defaults write com.apple.dock expose-group-by-app -bool true
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Bottom right screen corner → Launchpad
+defaults write com.apple.dock wvous-br-corner -int 5
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+
+# Mail
+# Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+
+# Terminal
+# Only use UTF-8
+defaults write com.apple.terminal StringEncodings -array 4
+
+
+# Activity Monitor
+# Visualize CPU history in the dock icon
+defaults write com.apple.ActivityMonitor IconType -int 6
+
+# Show all processes
+defaults write com.apple.ActivityMonitor ShowCategory -int 0
+
+# Sort results by CPU usage
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+# Setup update period to 2 seconds
+defaults write com.apple.ActivityMonitor UpdatePeriod 2
+
+
+# TextEdit
+# Use plain text mode for new documents
+defaults write com.apple.TextEdit RichText -int 0
+
+# Open and save files as UTF-8
+defaults write com.apple.TextEdit PlainTextEncoding -int 4
+defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+
+
+# Photos
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
