@@ -1,1 +1,9 @@
+# Emacs temporary files
 *~
+
+# Mac generated files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Thumbs.db
