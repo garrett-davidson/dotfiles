@@ -43,4 +43,3 @@ cask 'qlstephen'
 
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
-mas 'Xcode', id: 497799835
