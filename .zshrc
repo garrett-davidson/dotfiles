@@ -43,6 +43,7 @@ antigen bundle peterhurford/git-aliases.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle marzocchi/zsh-notify
 
+antigen apply
 
 # Zsh notify
 zstyle ':notify:*' error-sound "Glass"
