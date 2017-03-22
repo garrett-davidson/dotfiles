@@ -19,9 +19,11 @@
    (quote
     ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
  '(fci-rule-color "#073642")
- '(package-selected-packages (quote (color-theme-sanityinc-tomorrow xkcd)))
- '(tramp-default-host "xinu1.cs.purdue.edu" nil (tramp))
- '(tramp-default-user "gdavids" nil (tramp))
+ '(package-selected-packages
+   (quote
+    (exec-path-from-shell better-defaults color-theme-sanityinc-tomorrow xkcd)))
+ '(tramp-default-host "xinu1.cs.purdue.edu")
+ '(tramp-default-user "gdavids")
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -57,3 +59,7 @@
 (require 'tramp)
 (setq tramp-shell-prompt-pattern "➜ +[a-zA-z0-9~]+ ")
 
+(require 'better-defaults)
+
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
