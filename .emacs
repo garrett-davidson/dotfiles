@@ -64,3 +64,5 @@
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+(add-hook 'before-save-hook 'whitespace-cleanup)
