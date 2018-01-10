@@ -1,3 +1,7 @@
+emacs.d/*
+!emacs.d/init.el
+!emacs.d/custom
+
 # Emacs temporary files
 *~
 

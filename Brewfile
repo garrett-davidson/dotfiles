@@ -26,7 +26,6 @@ brew 'transmission'		# Torrent client
 brew 'wget'
 brew 'zsh'
 brew 'zsh-completions'
-brew 'd12frosted/emacs-plus/emacs-plus'	# My favorite Emacs for Mac
 
 # Apps
 cask 'dropbox'
