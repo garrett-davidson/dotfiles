@@ -42,3 +42,5 @@
         name = Garrett Davidson
         email = davidson.garrettm@gmail.com
         username = garrett-davidson
+[pull]
+        rebase = true
