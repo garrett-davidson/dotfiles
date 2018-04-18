@@ -11,3 +11,6 @@ emacs.d/*
 .Spotlight-V100
 .Trashes
 Thumbs.db
+
+# Xcode junk
+xcuserdata/
