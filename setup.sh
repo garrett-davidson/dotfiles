@@ -33,7 +33,7 @@ if [ $KERNEL == "Darwin" ]; then
 elif [ $KERNEL == "Linux" ]; then
     echo "Linux settings"
 
-    sudo apt-get install emacs zsh
+    sudo apt-get install emacs zsh -y
 fi
 
 # Make ZSH the default shell environment
