@@ -37,7 +37,8 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Dock/Menu bar
 # Dark theme
-defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Dark"
+# Requires logout
+defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceStyle -string "Dark"
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
