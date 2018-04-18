@@ -180,3 +180,5 @@ defaults write org.m0k.transmission SelectedPrefView -string "TOOLBAR_BANDWIDTH"
 
 # Randomize port on launch
 defaults write org.m0k.transmission RandomPort -bool true
+
+source .menubar
