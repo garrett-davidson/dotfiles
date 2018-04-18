@@ -33,6 +33,7 @@ if [ $KERNEL == "Darwin" ]; then
 elif [ $KERNEL == "Linux" ]; then
     echo "Linux settings"
 
+    sudo apt-get update
     sudo apt-get install emacs zsh -y
 fi
 
