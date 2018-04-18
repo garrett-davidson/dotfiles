@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Exit on first error
+set -e
+
 echo "Setting up..."
 
 # Ask for the administrator password upfront
