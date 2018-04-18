@@ -11,7 +11,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-if [ `uname -s` == "Darwin" ]; then
+KERNEL=`uname -s`
+
+if [ $KERNEL == "Darwin" ]; then
     echo "Mac settings"
 
     # Check for Homebrew and install if we don't have it
@@ -28,6 +30,10 @@ if [ `uname -s` == "Darwin" ]; then
 
     # Setup Mac settings
     source .mac
+elif [ $KERNEL == "Linux" ]; then
+    echo "Linux settings"
+
+    sudo apt-get install emacs zsh
 fi
 
 # Make ZSH the default shell environment
