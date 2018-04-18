@@ -1,5 +1,5 @@
 [core]
-        editor = emacs
+        editor = ~/dotfiles/emacsc
         excludesfile = $HOME/.gitignore
 
         # Treat spaces before tabs and all kinds of trailing whitespace as an error
