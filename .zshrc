@@ -1,3 +1,6 @@
+# Don't break emacs TRAMP with custom prompt
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 # Setup antigen
 # MUST BE DONE FIRST
 # Breaks zsh things if done later
