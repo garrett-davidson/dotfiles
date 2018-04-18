@@ -16,6 +16,9 @@ defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 echo "⌘F search Contains by default"
 defaults write com.apple.safari FindOnPageMatchesWordStartsOnly -bool false
 
+echo "Launching Safari reopens last session"
+defaults write com.apple.safari AlwaysRestoreSessionAtLaunch -bool true
+
 
 #Developer
 echo "Enable Debug menu"
