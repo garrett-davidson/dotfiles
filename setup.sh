@@ -34,7 +34,11 @@ elif [ $KERNEL == "Linux" ]; then
     echo "Linux settings"
 
     sudo apt-get update
-    sudo apt-get install emacs zsh -y
+    sudo apt-get install -y \
+         curl \
+         emacs \
+         tmux \
+         zsh
 fi
 
 # Make ZSH the default shell environment
