@@ -22,6 +22,16 @@
  'org-babel-load-languages
  '((gnuplot . t)))
 
+;; org-alert
+;; Allows org to send alerts based on agenda items
+(require 'org-alert)
+(org-alert-enable)
+
+;; org-random-todo
+;; Allows org to notify of random todo items (from org-agenda-files)
+(require 'org-random-todo)
+(setq org-random-todo-how-often 1500)
+(org-random-todo-mode 1)
 
 (provide 'org)
 ;;; org.el ends here
