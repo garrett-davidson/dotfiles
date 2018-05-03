@@ -6,6 +6,8 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+(global-set-key "\M-\C-g" 'org-plot/gnuplot)
+
 (setq org-log-done 'time)
 
 (setq org-agenda-files (list "~/Dropbox/org/apps"
@@ -15,3 +17,11 @@
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
 (setq org-catch-invisible-edits 1)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((gnuplot . t)))
+
+
+(provide 'org)
+;;; org.el ends here
