@@ -55,3 +55,4 @@ ln -s $DIR/.gitconfig $HOME/.gitconfig
 ln -s $DIR/.gitignore $HOME/.gitignore
 ln -s $DIR/.wgetrc $HOME/.wgetrc
 ln -s $DIR/.emacs $HOME/.emacs
+ln -s $DIR/tmux.conf $HOME/.tmux.conf
