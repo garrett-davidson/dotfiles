@@ -51,14 +51,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 # Symlink dotfiles
 DIR=`pwd`
-ln -s $DIR/.zshrc $HOME/.zshrc
-ln -s $DIR/.gitconfig $HOME/.gitconfig
-ln -s $DIR/.gitignore $HOME/.gitignore
-ln -s $DIR/.wgetrc $HOME/.wgetrc
-ln -s $DIR/.emacs $HOME/.emacs
-ln -s $DIR/tmux.conf $HOME/.tmux.conf
+ln -is $DIR/.zshrc $HOME/.zshrc
+ln -is $DIR/.gitconfig $HOME/.gitconfig
+ln -is $DIR/.gitignore $HOME/.gitignore
+ln -is $DIR/.wgetrc $HOME/.wgetrc
+ln -is $DIR/.emacs $HOME/.emacs
+ln -is $DIR/tmux.conf $HOME/.tmux.conf
 
 ALIASFILE="aliases-$KERNEL.sh"
 if [ -f $DIR/$ALIASFILE ]; then
-    ln -s $DIR/$ALIASFILE $HOME/.$ALIASFILE
+    ln -is $DIR/$ALIASFILE $HOME/.$ALIASFILE
 fi
