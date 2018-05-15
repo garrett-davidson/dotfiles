@@ -6,6 +6,7 @@
 # Breaks zsh things if done later
 source /usr/local/share/antigen/antigen.zsh
 
+alias emacs="~/dotfiles/emacsc"
 EDITOR=emacs
 
 # Path to your oh-my-zsh installation.
@@ -33,12 +34,6 @@ export CHEATCOLORS=true
 eval "$(thefuck --alias)"
 
 
-# Dev peth aliases
-export DEV=$HOME/Dropbox/Dev
-export IOS=$DEV/iOS
-export OSX=$DEV/OS\ X
-
-
 # Antigen plugins
 antigen bundle unixorn/git-extra-commands
 antigen bundle voronkovich/gitignore.plugin.zsh
@@ -51,3 +46,7 @@ antigen apply
 # Zsh notify
 zstyle ':notify:*' error-sound "Glass"
 zstyle ':notify:*' success-sound "default"
+
+if [ -f $HOME/.zshrc-local ]; then
+    source $HOME/.zshrc-local
+fi
