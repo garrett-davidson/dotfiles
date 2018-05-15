@@ -37,6 +37,7 @@ elif [ $KERNEL == "Linux" ]; then
     sudo apt-get install -y \
          curl \
          emacs \
+         git \
          tmux \
          zsh
 fi
