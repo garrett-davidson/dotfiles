@@ -1,0 +1,1 @@
+alias inst="brew install"

@@ -32,6 +32,12 @@ eval "$(thefuck --alias)"
 zstyle ':notify:*' error-sound "Glass"
 zstyle ':notify:*' success-sound "default"
 
+# Set up aliases
+ALIASFILE=.aliases-$(uname -s).sh
+if [ -f $ALIASFILE ]; then
+    source $ALIASFILE
+fi
+
 if [ -f $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
 fi
