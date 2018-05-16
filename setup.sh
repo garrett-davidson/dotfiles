@@ -38,6 +38,7 @@ elif [ $KERNEL == "Linux" ]; then
          curl \
          emacs \
          git \
+         thefuck \
          tmux \
          zsh
 fi
