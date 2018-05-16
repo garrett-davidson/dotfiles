@@ -29,7 +29,7 @@ if [ $KERNEL == "Darwin" ]; then
     brew bundle
 
     # Setup Mac settings
-    source .mac
+    source mac.sh
 elif [ $KERNEL == "Linux" ]; then
     echo "Linux settings"
 
@@ -51,11 +51,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 # Symlink dotfiles
 DIR=`pwd`
-ln -is $DIR/.zshrc $HOME/.zshrc
-ln -is $DIR/.gitconfig $HOME/.gitconfig
-ln -is $DIR/.gitignore $HOME/.gitignore
-ln -is $DIR/.wgetrc $HOME/.wgetrc
-ln -is $DIR/.emacs $HOME/.emacs
+ln -is $DIR/zshrc $HOME/.zshrc
+ln -is $DIR/gitconfig $HOME/.gitconfig
+ln -is $DIR/gitignore $HOME/.gitignore
+ln -is $DIR/wgetrc $HOME/.wgetrc
+ln -is $DIR/emacs.d $HOME/.emacs.d
 ln -is $DIR/tmux.conf $HOME/.tmux.conf
 
 ALIASFILE="aliases-$KERNEL.sh"

@@ -16,7 +16,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Setup system lanuage for English and Arabic
 defaults write NSGlobalDomain AppleLanguages -array "en-US" "ar"
 
-source .safari
+source safari.sh
 
 # AirDrop
 # Use AirDrop over every interface.
@@ -28,7 +28,7 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-source .finder
+source finder.sh
 
 # QuickLook
 # Allow text-selection in Quick Look
@@ -181,4 +181,4 @@ defaults write org.m0k.transmission SelectedPrefView -string "TOOLBAR_BANDWIDTH"
 # Randomize port on launch
 defaults write org.m0k.transmission RandomPort -bool true
 
-source .menubar
+source menubar.sh
