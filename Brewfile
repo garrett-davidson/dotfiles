@@ -7,7 +7,7 @@ tap 'homebrew/dupes'
 
 # Binaries
 brew 'antigen'			# ZSH package manager
-brew 'bash' 			# Latest Bash
+brew 'bash'                     # Latest Bash
 brew 'bash-completion'
 brew 'coreutils'		# GNU core utilities (more updated than the macOS ones)
 brew 'findutils'		# GNU `find`, `updatedb`, and `xargs`
