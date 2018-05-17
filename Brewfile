@@ -10,6 +10,7 @@ brew 'antigen'			# ZSH package manager
 brew 'bash'                     # Latest Bash
 brew 'bash-completion'
 brew 'coreutils'		# GNU core utilities (more updated than the macOS ones)
+brew 'diff-so-fancy'
 brew 'findutils'		# GNU `find`, `updatedb`, and `xargs`
 brew 'git'			# Most updated git
 brew 'hub'			# GitHub helper
