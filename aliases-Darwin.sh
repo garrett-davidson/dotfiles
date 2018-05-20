@@ -1,1 +1,1 @@
-alias inst="brew install"
+alias get="brew install"

@@ -1,1 +1,1 @@
-alias inst="sudo apt-get install -y"
+alias get="sudo apt-get install -y"
