@@ -1,0 +1,142 @@
+* Initial setup
+** [[https://github.com/jwiegley/use-package][use-package]]
+Check for and (possibly) install =use-package=.
+
+#+BEGIN_SRC emacs-lisp
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+#+END_SRC
+
+#+RESULTS:
+
+Tell =use-package= to make sure it installs any packages that aren't already installed:
+
+#+BEGIN_SRC emacs-lisp
+  (use-package use-package)
+  (setq use-package-always-ensure t)
+#+END_SRC
+
+#+RESULTS:
+: t
+
+...by compiling them and automatically fetching the latest versions:
+
+#+BEGIN_SRC emacs-lisp
+  (use-package auto-compile)
+  (use-package auto-compile
+    :config (auto-compile-on-load-mode))
+
+  (setq load-prefer-newer t)
+#+END_SRC
+
+#+RESULTS:
+: t
+** Server
+#+BEGIN_SRC emacs-lisp
+(server-start)
+#+END_SRC
+* [[https://github.com/technomancy/better-defaults][Better defaults]]
+
+#+BEGIN_SRC emacs-lisp
+  (use-package better-defaults)
+#+END_SRC
+
+#+RESULTS:
+
+* Helper functions
+  * =find-file= as root
+#+BEGIN_SRC emacs-lisp
+  (defun sudo-find-file ()
+    (interactive)
+    (let ((file-name (buffer-file-name)))
+      (when file-name
+        (find-alternate-file (concat "/sudo::" file-name)))))
+#+END_SRC
+
+#+RESULTS:
+: sudo-find-file
+
+* General UI
+** Fancy symbols
+   Display fancy symbols based on =lisp--prettify-symbols-alist=. More info [[https://emacsredux.com/blog/2014/08/25/a-peek-at-emacs-24-dot-4-prettify-symbols-mode/][here]].
+#+BEGIN_SRC emacs-lisp
+  (global-prettify-symbols-mode t)
+#+END_SRC
+
+#+RESULTS:
+: t
+** Theme
+   * [[https://github.com/srcery-colors/srcery-emacs][Srcery]]
+#+BEGIN_SRC emacs-lisp
+  (use-package srcery-theme)
+  (load-theme 'srcery t)
+#+END_SRC
+
+#+RESULTS:
+
+** Git gutter
+#+BEGIN_SRC emacs-lisp
+  (use-package git-gutter+
+    :init (global-git-gutter+-mode))
+#+END_SRC
+* Org
+** Templates
+   * Add "<el" template to open emacs-lisp source block
+#+BEGIN_SRC emacs-lisp
+  (push '("el" "#+BEGIN_SRC emacs-lisp
+  ?
+\#+END_SRC") org-structure-template-alist)
+#+END_SRC
+
+** Functions
+#+BEGIN_SRC emacs-lisp
+  (defun org-archive-all-done-tasks ()
+    (interactive)
+    (org-map-entries
+     (lambda ()
+       (org-archive-subtree)
+       (setq org-map-continue-from (org-element-property :begin (org-element-at-point))))
+     "/DONE" 'file))
+
+  (add-hook 'org-mode-hook
+  (lambda ()
+  (local-set-key (kbd "C-c C-x C-A") 'org-archive-all-done-tasks)))
+#+END_SRC
+* Programming
+** Compiling
+Automatically scroll the =*compilation*= buffer
+#+BEGIN_SRC emacs-lisp
+  (setq compilation-scroll-output t)
+#+END_SRC
+
+** Flycheck
+Use flycheck for syntax highlighting.
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck)
+#+END_SRC
+** Git
+*** Magit
+Use magit and bind to C-x g
+#+BEGIN_SRC emacs-lisp
+  (use-package magit
+    :bind
+    ("C-x g" . magit-status))
+#+END_SRC
+* Text
+Set tab width to 2.
+#+BEGIN_SRC emacs-lisp
+  (setq-default tab-width 2)
+#+END_SRC
+
+Enable subword movement.
+#+BEGIN_SRC emacs-lisp
+  (use-package subword
+  :config (global-subword-mode 1))
+#+END_SRC
+
+Clean up trailing whitespace on only changed lines.
+#+BEGIN_SRC emacs-lisp
+  (use-package ws-butler
+    :init (ws-butler-global-mode))
+#+END_SRC
