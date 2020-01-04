@@ -1,8 +1,3 @@
-# Ask for the administrator password upfront
-sudo -v
-# Keep-alive: update existing `sudo` time stamp until `.mac` has finished
-while true; do sudo -n true; sleep 20; kill -0 "$$" || exit; done 2>/dev/null &
-
 # General
 
 # Automatically quit printer app once the print jobs complete
