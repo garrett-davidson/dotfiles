@@ -55,6 +55,7 @@ ln -is $DIR/gitignore $HOME/.gitignore
 ln -is $DIR/wgetrc $HOME/.wgetrc
 ln -is $DIR/emacs.d $HOME/.emacs.d
 ln -is $DIR/tmux.conf $HOME/.tmux.conf
+ln -is $DIR/emacs-launch-agent.plist $HOME/Library/LaunchAgents/emacs-launch-agent.plist
 
 ALIASFILE="aliases-$KERNEL.sh"
 if [ -f $DIR/$ALIASFILE ]; then
